@@ -1,0 +1,130 @@
+#footer .container {
+  @extend %SectionPaddings;
+  display: flex;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: 1199px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 60px;
+  }
+  @media screen and (min-width: 1200px) {
+    align-items: baseline;
+  }
+
+  background-color: $footer-background-color;
+}
+#footer .footer-contacts {
+  @media screen and(max-width: 1199px) {
+    text-align: center;
+  }
+
+  address {
+    color: $primary-background-color;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    font-style: normal;
+    @media screen and (min-width: 1200px) {
+      width: 231px;
+    }
+
+    a {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 8px;
+    }
+  }
+}
+
+#footer .social {
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 69px;
+    margin-right: 94px;
+  }
+}
+
+#footer b {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $primary-background-color;
+}
+#footer form {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 450px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 570px;
+  }
+
+  .box-input {
+    position: relative;
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+      margin-right: 12px;
+    }
+    input {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+      background-color: $footer-background-color;
+      padding-left: 16px;
+
+      &:focus {
+        outline: none;
+      }
+      &:focus ~ label {
+        @media screen and (max-width: 1199px) {
+          transform: translateY(-40px);
+        }
+        @media screen and (min-width: 1200px) {
+          transform: translateX(-65px);
+        }
+
+        font-size: 14px;
+      }
+    }
+    label {
+      position: absolute;
+      top: 15px;
+      left: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.25;
+      color: rgba(255, 255, 255, 0.6);
+      @include Transition("transform, font-size");
+    }
+  }
+
+  .send-icon {
+    fill: $primary-background-color;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+}

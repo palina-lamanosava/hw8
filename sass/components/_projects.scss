@@ -1,0 +1,129 @@
+.projects-filter-list {
+  display: flex;
+  gap: 8px;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 1199px) {
+    justify-content: center;
+  }
+}
+
+.projects-examples-list {
+  @media screen and(max-width:767px) {
+    margin-top: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .cards {
+    @include Transition(box-shadow);
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+      width: 354px;
+    }
+    @media screen and (min-width: 1199px) {
+      width: 370px;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover .cards-description,
+    &:focus .cards-description {
+      opacity: 1;
+      background-color: $accent-color;
+      transform: translateY(-100%);
+    }
+
+    &:not(:last-child) {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .cards-description {
+      @include Transition("opacity, background-color, transform");
+      position: absolute;
+      display: flex;
+      opacity: 0;
+
+      align-items: center;
+      bottom: -294px;
+      left: 0;
+      width: 100%;
+      min-height: 294px;
+    }
+
+    .cards-image {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+}
+
+#projects {
+  @extend %SectionPaddings;
+  & h2 {
+    display: none;
+  }
+  & button {
+    margin-bottom: 7px;
+    padding: 6px 22px;
+    border: 1px transparent;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $primary-text-color;
+    background-color: $secondary-background-color;
+    @include Transition("color, background-color, box-shadow");
+  }
+  & button:hover,
+  &button:focus {
+    color: $primary-background-color;
+    background-color: $accent-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  & h3 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  & .caption {
+    padding: 20px 24px;
+    border-bottom: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+  }
+  & .caption p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.87;
+    color: $secondary-text-color;
+    margin: 0;
+  }
+
+  & .description {
+    display: block;
+    margin-left: 24px;
+    margin-right: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: $primary-background-color;
+  }
+}

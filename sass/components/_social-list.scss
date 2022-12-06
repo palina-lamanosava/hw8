@@ -1,0 +1,42 @@
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  width: 206px;
+  margin: auto;
+
+  .social-item {
+    & a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      @include Transition(background-color);
+    }
+  }
+  .bottom-social-item {
+    a {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .social-link {
+    fill: $icon-color;
+    @include Transition(fill);
+  }
+
+  .social-link-footer {
+    fill: $primary-background-color;
+  }
+}
+
+.social-item:hover a,
+.social-item:focus a {
+  background-color: $accent-color;
+}
+.social-item:hover .social-link,
+.social-item:focus .social-link {
+  fill: $primary-background-color;
+}
