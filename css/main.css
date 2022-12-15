@@ -289,6 +289,8 @@ a {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 h2 {
@@ -389,6 +391,7 @@ h2 {
 
 @media screen and (max-width: 767px) {
   .nav-container {
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
     position: absolute;
@@ -408,6 +411,7 @@ h2 {
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .nav-container.is-open {
+    visibility: visible;
     opacity: 1;
     pointer-events: all;
     -webkit-transform: translateX(0%);
@@ -681,11 +685,33 @@ h2 {
 .hero-container {
   background-color: rgba(47, 48, 58, 0.8);
   text-align: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/header.jpg);
-  background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/header.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/hero-mobile.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-mobile.jpg);
+  }
+}
+@media screen and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 767px) and (min-resolution: 192dpi), screen and (max-width: 767px) and (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/hero-mobile@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-mobile@2x.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/hero-tablet.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-tablet.jpg);
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/hero-tablet@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-tablet@2x.jpg);
+  }
 }
 @media screen and (max-width: 1199px) {
   .hero-container {
@@ -695,6 +721,14 @@ h2 {
 @media screen and (min-width: 1200px) {
   .hero-container {
     min-height: 600px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/hero-desktop.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-desktop.jpg);
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/hero-desktop@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-desktop@2x.jpg);
   }
 }
 
@@ -895,6 +929,27 @@ h2 {
 @media screen and (min-width: 1200px) {
   .team-list-item {
     width: 270px;
+  }
+}
+.team-list-item .thumb {
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .team-list-item .thumb {
+    max-width: 450px;
+    max-height: 320px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .team-list-item .thumb {
+    max-width: 354px;
+    max-height: 260px;
+  }
+}
+@media screen and (min-width: 1199px) {
+  .team-list-item .thumb {
+    max-width: 270px;
+    max-height: 260px;
   }
 }
 
@@ -1526,14 +1581,23 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  bottom: -294px;
+  bottom: -100%;
   left: 0;
   width: 100%;
-  min-height: 294px;
+  height: 100%;
 }
 .projects-examples-list .cards .cards-image {
   position: relative;
   overflow: hidden;
+}
+.projects-examples-list .cards .cards-image .thumb {
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .projects-examples-list .cards .cards-image .thumb {
+    max-width: 450px;
+    max-height: 294px;
+  }
 }
 
 #projects h2 {

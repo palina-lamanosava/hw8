@@ -15,7 +15,6 @@
   }
 
   & .icon-cross {
-    // display: none;
     opacity: 0;
     pointer-events: none;
     @include Transition("opacity, fill");
@@ -28,14 +27,11 @@
 }
 
 .menu-button.is-open .icon-cross {
-  // display: block;
   opacity: 1;
   pointer-events: all;
 }
 
 .menu-button.is-open .icon-menu {
-  // display: none;
-
   opacity: 0;
   pointer-events: none;
 }

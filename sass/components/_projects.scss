@@ -41,6 +41,7 @@
     &:focus .cards-description {
       opacity: 1;
       background-color: $accent-color;
+
       transform: translateY(-100%);
     }
 
@@ -57,15 +58,24 @@
       opacity: 0;
 
       align-items: center;
-      bottom: -294px;
+      bottom: -100%;
       left: 0;
       width: 100%;
-      min-height: 294px;
+      height: 100%;
     }
 
     .cards-image {
       position: relative;
       overflow: hidden;
+
+      & .thumb {
+        @media screen and (max-width: 767px) {
+          max-width: 450px;
+          max-height: 294px;
+        }
+
+        overflow: hidden;
+      }
     }
   }
 }
