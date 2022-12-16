@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <title>Contacts</title>
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <nav class="nav">
+          <a class="logo top" href="./index.html">
+            <span class="accent-logo">Web</span> Studio</a
+          >
+          <button
+            class="menu-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-container"
+            data-menu-button
+          >
+            <svg
+              width="40"
+              height="40"
+              aria-label="Переключатель мобильного меню"
+            >
+              <use
+                class="icon-menu"
+                href="./images/symbol-defs.svg#icon-menu"
+              ></use>
+              <use
+                class="icon-cross"
+                href="./images/symbol-defs.svg#icon-close"
+              ></use>
+            </svg>
+          </button>
+          <div class="nav-container" id="nav-container" data-menu>
+            <ul class="nav-main">
+              <li class="item"><a href="index.html">Студия</a></li>
+              <li class="item"><a href="portfolio.html">Портфолио</a></li>
+              <li class="item"><a href="contacts.html">Контакты</a></li>
+            </ul>
+
+            <ul class="main-nav-contacts">
+              <li class="item">
+                <a href="mailto:info@example.com" target="_blank">
+                  <svg
+                    class="icon-contacts icon-envelope"
+                    width="16"
+                    height="11"
+                  >
+                    <use href="./images/symbol-defs.svg#icon-envelope"></use>
+                  </svg>
+                  info@devstudio.com</a
+                >
+              </li>
+              <li class="item">
+                <a href="tel:+380961111122">
+                  <svg
+                    class="icon-contacts icon-smartphone"
+                    width="10"
+                    height="15"
+                  >
+                    <use href="./images/symbol-defs.svg#icon-smartphone"></use>
+                  </svg>
+                  +38 096 111 11 22</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <script src="./js/menu.js"></script>
+    <script src="./js/active-page.js"></script>
+  </body>
+</html>

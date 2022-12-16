@@ -391,31 +391,29 @@ h2 {
 
 @media screen and (max-width: 767px) {
   .nav-container {
+    overflow: hidden;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    right: 0;
+    width: 0;
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: #ffffff;
-    -webkit-transition-property: "opacity, transform";
-    transition-property: "opacity, transform";
+    -webkit-transition-property: "opacity, width";
+    transition-property: "opacity, width";
     -webkit-transition-duration: 250ms;
             transition-duration: 250ms;
     -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .nav-container.is-open {
+    width: 100%;
     visibility: visible;
     opacity: 1;
     pointer-events: all;
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
     z-index: 1;
   }
 }
@@ -528,6 +526,9 @@ h2 {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-main .item:hover a, .nav-main .item:focus a {
+  color: #2196f3;
+}
+.nav-main .item a.active {
   color: #2196f3;
 }
 
@@ -742,7 +743,7 @@ h2 {
 @media screen and (max-width: 1199px) {
   .hero h1 {
     margin: 118px auto 30px;
-    width: 360px;
+    max-width: 360px;
     font-size: 26px;
     line-height: 1.62;
   }
@@ -1295,7 +1296,22 @@ h2 {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 280px) {
+  .modal {
+    padding: 20px;
+  }
+}
+@media screen and (max-height: 600px) {
+  .modal {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .modal {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 481px) {
   .modal {
     width: 450px;
   }
@@ -1439,6 +1455,9 @@ h2 {
     font-size: 14px;
     line-height: 1.71;
   }
+}
+.form .checkbox .text-agreement {
+  margin-left: 5px;
 }
 .form .checkbox .agreement {
   color: #2196f3;
@@ -1655,4 +1674,9 @@ h2 {
   font-size: 18px;
   line-height: 1.6;
   color: #ffffff;
+}
+@media screen and (max-width: 280px) {
+  #projects .description {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=main.css.map */

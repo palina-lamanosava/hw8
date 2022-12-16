@@ -135,5 +135,9 @@
     font-size: 18px;
     line-height: 1.6;
     color: $primary-background-color;
+
+    @media screen and (max-width: 280px) {
+      font-size: 12px;
+    }
   }
 }
